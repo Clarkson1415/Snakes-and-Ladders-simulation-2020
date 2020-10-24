@@ -46,7 +46,7 @@ namespace Snakes_and_Ladders_Maths_Assignment
             Random diceRoll = new Random();
             int i = 0;
 
-            for (; ; ) //begin loop
+            for (; ; ) //begin lo
             {
 
 

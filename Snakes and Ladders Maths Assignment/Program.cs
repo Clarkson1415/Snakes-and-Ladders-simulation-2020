@@ -46,7 +46,7 @@ namespace Snakes_and_Ladders_Maths_Assignment
             Random diceRoll = new Random();
             int i = 0;
 
-            for (; ; ) //begin lo
+            for (; ; ) //begin loop
             {
 
 
@@ -98,6 +98,7 @@ namespace Snakes_and_Ladders_Maths_Assignment
                         x = 5;
                         y = 8;
                         Console.WriteLine("95");
+                        Console.WriteLine("down a snake: 5, 8");
                     }
 
                     else if (y == 0) //if row number is even or 0, player goes right and up
@@ -277,8 +278,6 @@ namespace Snakes_and_Ladders_Maths_Assignment
                             x += roll;
                             y = y;
                         }
-
-
                         else if (x + roll <= 10 && y == 10)//last line
                         {
                             x = 10;
@@ -525,7 +524,6 @@ namespace Snakes_and_Ladders_Maths_Assignment
                         {
                             Console.WriteLine("106");
                             x += roll;
-                            y = y;
                         }
                         else if (x + roll <= 10 && y == 10)//last line
                         {

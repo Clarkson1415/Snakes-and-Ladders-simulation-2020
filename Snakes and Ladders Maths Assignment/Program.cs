@@ -100,7 +100,6 @@ namespace Snakes_and_Ladders_Maths_Assignment
                         Console.WriteLine("95");
                         Console.WriteLine("down a snake: 5, 8");
                     }
-
                     else if (y == 0) //if row number is even or 0, player goes right and up
                     {
                         Console.WriteLine("103");

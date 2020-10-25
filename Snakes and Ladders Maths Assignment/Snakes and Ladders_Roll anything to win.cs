@@ -1,14 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Linq;
-using System.Media;
-using System.Net.Http.Headers;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Snakes_and_Ladders_Maths_Assignment
 //By Grace Clarkson
@@ -19,6 +9,7 @@ namespace Snakes_and_Ladders_Maths_Assignment
         static void Main(string[] args)
         {
             //snake by grace clarkson
+            //
 
             //player position is (x, y) 
             int x = 0;
@@ -109,7 +100,7 @@ namespace Snakes_and_Ladders_Maths_Assignment
                             x += roll;
                             y = y;
                         }
-                        
+
 
                         else if (x + roll <= 10 && y == 10)//last line
                         {
@@ -665,9 +656,9 @@ namespace Snakes_and_Ladders_Maths_Assignment
 
                 }
             }
-            }
         }
     }
+}
 
 //output rolling number and run loads and count along check 5 rounds 5 times
 //made ladders only changing 2 upwards annd 2 right

@@ -31,8 +31,6 @@ namespace Snakes_and_Ladders_Maths_Assignment
             //for times used ladders and times used snakes ask y/n
             //for the average of all of these ask y/n 
 
-
-
             int r = 0; //times rolled
             Random diceRoll = new Random();
             int i = 0;
@@ -635,11 +633,7 @@ namespace Snakes_and_Ladders_Maths_Assignment
                         }
 
 
-
-
-
                     }
-
                     //output for winning game
                     else if (x == 10 && y == 10) //finished game
                     {
@@ -652,11 +646,22 @@ namespace Snakes_and_Ladders_Maths_Assignment
                         r = 0;
 
                     }
-                    //in neither odd or even just for the loop to execute anyway while i < 5
+                    else
+                    {
+                        break;
+                    }
 
+
+
+                    //in neither odd or even just for the loop to execute anyway while i < 5
                 }
+
             }
+            Console.WriteLine("Gh");
+            Console.WriteLine("Gh");
+
         }
+
     }
 }
 

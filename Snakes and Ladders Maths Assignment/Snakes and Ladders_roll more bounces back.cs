@@ -9,11 +9,16 @@ namespace Snakes_and_Ladders_Maths_Assignment
         static void Main(string[] args)
         {
             //snake by grace clarkson
-            //
+            //the grid starts at 1,1 and ends at 10,10
+
+            //need to do
+            //1. in 10 by 10 do 1 for y even, y odd and y last row should be 3 big if statements, haven't started.
+            //2. and change all grid values to a 1,1 and 10,10 grid. haven't started upto: 
+
 
             //player position is (x, y) 
-            int x = 0;
-            int y = 0;
+            int x = 1;
+            int y = 1;
 
             int s = 2; //no. snakes in the game.
             //snake 1 start: input end: input       will need to change for each thingo a variable like snakeHead1 snakeTail1 etc.
@@ -40,7 +45,7 @@ namespace Snakes_and_Ladders_Maths_Assignment
             for (; ; ) //begin loop
             {
 
-
+                
 
                 if (i < 5)
                 {
@@ -58,8 +63,20 @@ namespace Snakes_and_Ladders_Maths_Assignment
 
                     //check position for on ladder or snake change accordingly
                     //ladder 1
+                    //output for winning game
+                    if (x == 10 && y == 10) //finished game
+                    {
+                        Console.WriteLine("Finsihed: Rolls {0}, snakes {1}, ladders {2}", r, s, l);
+                        i += 1;
+                        //reset
+                        y = 0;
+                        x = 0;
+                        Console.WriteLine("232");
+                        r = 0;
 
-                    if (x == 5 && y == 7)
+                    }
+
+                    else if (x == 5 && y == 7)
                     {
                         x = 7;
                         y = 9;
@@ -91,182 +108,14 @@ namespace Snakes_and_Ladders_Maths_Assignment
                         Console.WriteLine("95");
                         Console.WriteLine("down a snake: 5, 8");
                     }
-                    else if (y == 0) //if row number is even or 0, player goes right and up
+
+                    else if (y % 2 == 0 && y < 10) //if row number is even and not last row.
                     {
                         Console.WriteLine("103");
                         if (x + roll <= 10 && y < 10) //if won't go up a row
                         {
                             Console.WriteLine("106");
                             x += roll;
-                            y = y;
-                        }
-
-
-                        else if (x + roll <= 10 && y == 10)//last line
-                        {
-                            x = 10;
-                            Console.WriteLine("109");
-                        }
-                        else if (x + roll == 11 && y < 10) //the rest are for did go up a row
-                        {
-                            x = 10;
-                            y += 1;
-                            Console.WriteLine("115");
-                        }
-                        else if (x + roll == 11 && y == 10) //when in top row
-                        {
-                            x = 10;
-                            Console.WriteLine("120");
-                        }
-                        else if (x + roll == 12 && y < 10) //added y<10 so that it doesn't make x=9 and add to y incase already in top row
-                        {
-                            x = 9;
-                            y++;
-                            Console.WriteLine("126");
-                        }
-                        else if (x + roll == 12 && y == 10) //when in top row -> so if y is in the top row so don't add a 1 to it
-                        {
-                            x = 9;
-                            Console.WriteLine("131");
-                        }
-                        else if (x + roll == 13 && y < 10)
-                        {
-                            x = 8;
-                            y++;
-                            Console.WriteLine("137");
-                        }
-                        else if (x + roll == 13 && y == 10)//when in top row
-                        {
-                            x = 8;
-                            Console.WriteLine("142");
-                        }
-                        else if (x + roll == 14 && y < 10)
-                        {
-                            x = 7;
-                            y++;
-                            Console.WriteLine("148");
-                        }
-                        else if (x + roll == 14 && y == 10) //top row
-                        {
-                            x = 7;
-                            Console.WriteLine("153");
-                        }
-                        else if (x + roll == 15 && y < 10)
-                        {
-                            x = 6;
-                            y++;
-                            Console.WriteLine("159");
-                        }
-                        else if (x + roll == 15 && y == 10)//top row
-                        {
-                            x = 6;
-                            Console.WriteLine("164");
-                        }
-                        else if (x + roll == 16 && y < 10)
-                        {
-                            x = 5;
-                            y++;
-                            Console.WriteLine("170");
-                        }
-                        else if (x + roll == 16 && y == 10)
-                        {
-                            x = 5;
-                            Console.WriteLine("175");
-                        }
-                    }
-
-                    else if (y == 2) //if row number is even or 0, player goes right and up
-                    {
-                        Console.WriteLine("103");
-                        if (x + roll <= 10 && y < 10) //if won't go up a row
-                        {
-                            Console.WriteLine("106");
-                            x += roll;
-                            y = y;
-                        }
-
-
-                        else if (x + roll <= 10 && y == 10)//last line
-                        {
-                            x = 10;
-                            Console.WriteLine("109");
-                        }
-                        else if (x + roll == 11 && y < 10) //the rest are for did go up a row
-                        {
-                            x = 10;
-                            y += 1;
-                            Console.WriteLine("115");
-                        }
-                        else if (x + roll == 11 && y == 10) //when in top row
-                        {
-                            x = 10;
-                            Console.WriteLine("120");
-                        }
-                        else if (x + roll == 12 && y < 10) //added y<10 so that it doesn't make x=9 and add to y incase already in top row
-                        {
-                            x = 9;
-                            y++;
-                            Console.WriteLine("126");
-                        }
-                        else if (x + roll == 12 && y == 10) //when in top row -> so if y is in the top row so don't add a 1 to it
-                        {
-                            x = 9;
-                            Console.WriteLine("131");
-                        }
-                        else if (x + roll == 13 && y < 10)
-                        {
-                            x = 8;
-                            y++;
-                            Console.WriteLine("137");
-                        }
-                        else if (x + roll == 13 && y == 10)//when in top row
-                        {
-                            x = 8;
-                            Console.WriteLine("142");
-                        }
-                        else if (x + roll == 14 && y < 10)
-                        {
-                            x = 7;
-                            y++;
-                            Console.WriteLine("148");
-                        }
-                        else if (x + roll == 14 && y == 10) //top row
-                        {
-                            x = 7;
-                            Console.WriteLine("153");
-                        }
-                        else if (x + roll == 15 && y < 10)
-                        {
-                            x = 6;
-                            y++;
-                            Console.WriteLine("159");
-                        }
-                        else if (x + roll == 15 && y == 10)//top row
-                        {
-                            x = 6;
-                            Console.WriteLine("164");
-                        }
-                        else if (x + roll == 16 && y < 10)
-                        {
-                            x = 5;
-                            y++;
-                            Console.WriteLine("170");
-                        }
-                        else if (x + roll == 16 && y == 10)
-                        {
-                            x = 5;
-                            Console.WriteLine("175");
-                        }
-                    }
-
-                    else if (y == 4) //if row number is even or 0, player goes right and up
-                    {
-                        Console.WriteLine("103");
-                        if (x + roll <= 10 && y < 10) //if won't go up a row
-                        {
-                            Console.WriteLine("106");
-                            x += roll;
-                            y = y;
                         }
                         else if (x + roll <= 10 && y == 10)//last line
                         {
@@ -341,171 +190,6 @@ namespace Snakes_and_Ladders_Maths_Assignment
                         }
                     }
 
-                    else if (y == 6) //if row number is even or 0, player goes right and up
-                    {
-                        Console.WriteLine("103");
-                        if (x + roll <= 10 && y < 10) //if won't go up a row
-                        {
-                            Console.WriteLine("106");
-                            x += roll;
-                            y = y;
-                        }
-
-
-                        else if (x + roll <= 10 && y == 10)//last line
-                        {
-                            x = 10;
-                            Console.WriteLine("109");
-                        }
-                        else if (x + roll == 11 && y < 10) //the rest are for did go up a row
-                        {
-                            x = 10;
-                            y += 1;
-                            Console.WriteLine("115");
-                        }
-                        else if (x + roll == 11 && y == 10) //when in top row
-                        {
-                            x = 10;
-                            Console.WriteLine("120");
-                        }
-                        else if (x + roll == 12 && y < 10) //added y<10 so that it doesn't make x=9 and add to y incase already in top row
-                        {
-                            x = 9;
-                            y++;
-                            Console.WriteLine("126");
-                        }
-                        else if (x + roll == 12 && y == 10) //when in top row -> so if y is in the top row so don't add a 1 to it
-                        {
-                            x = 9;
-                            Console.WriteLine("131");
-                        }
-                        else if (x + roll == 13 && y < 10)
-                        {
-                            x = 8;
-                            y++;
-                            Console.WriteLine("137");
-                        }
-                        else if (x + roll == 13 && y == 10)//when in top row
-                        {
-                            x = 8;
-                            Console.WriteLine("142");
-                        }
-                        else if (x + roll == 14 && y < 10)
-                        {
-                            x = 7;
-                            y++;
-                            Console.WriteLine("148");
-                        }
-                        else if (x + roll == 14 && y == 10) //top row
-                        {
-                            x = 7;
-                            Console.WriteLine("153");
-                        }
-                        else if (x + roll == 15 && y < 10)
-                        {
-                            x = 6;
-                            y++;
-                            Console.WriteLine("159");
-                        }
-                        else if (x + roll == 15 && y == 10)//top row
-                        {
-                            x = 6;
-                            Console.WriteLine("164");
-                        }
-                        else if (x + roll == 16 && y < 10)
-                        {
-                            x = 5;
-                            y++;
-                            Console.WriteLine("170");
-                        }
-                        else if (x + roll == 16 && y == 10)
-                        {
-                            x = 5;
-                            Console.WriteLine("175");
-                        }
-                    }
-
-                    else if (y == 8) //if row number is even or 0, player goes right and up
-                    {
-                        Console.WriteLine("103");
-                        if (x + roll <= 10 && y < 10) //if won't go up a row
-                        {
-                            Console.WriteLine("106");
-                            x += roll;
-                            y = y;
-                        }
-                        else if (x + roll <= 10 && y == 10)//last line
-                        {
-                            x = 10;
-                            Console.WriteLine("109");
-                        }
-                        else if (x + roll == 11 && y < 10) //the rest are for did go up a row
-                        {
-                            x = 10;
-                            y += 1;
-                            Console.WriteLine("115");
-                        }
-                        else if (x + roll == 11 && y == 10) //when in top row
-                        {
-                            x = 10;
-                            Console.WriteLine("120");
-                        }
-                        else if (x + roll == 12 && y < 10) //added y<10 so that it doesn't make x=9 and add to y incase already in top row
-                        {
-                            x = 9;
-                            y++;
-                            Console.WriteLine("126");
-                        }
-                        else if (x + roll == 12 && y == 10) //when in top row -> so if y is in the top row so don't add a 1 to it
-                        {
-                            x = 9;
-                            Console.WriteLine("131");
-                        }
-                        else if (x + roll == 13 && y < 10)
-                        {
-                            x = 8;
-                            y++;
-                            Console.WriteLine("137");
-                        }
-                        else if (x + roll == 13 && y == 10)//when in top row
-                        {
-                            x = 8;
-                            Console.WriteLine("142");
-                        }
-                        else if (x + roll == 14 && y < 10)
-                        {
-                            x = 7;
-                            y++;
-                            Console.WriteLine("148");
-                        }
-                        else if (x + roll == 14 && y == 10) //top row
-                        {
-                            x = 7;
-                            Console.WriteLine("153");
-                        }
-                        else if (x + roll == 15 && y < 10)
-                        {
-                            x = 6;
-                            y++;
-                            Console.WriteLine("159");
-                        }
-                        else if (x + roll == 15 && y == 10)//top row
-                        {
-                            x = 6;
-                            Console.WriteLine("164");
-                        }
-                        else if (x + roll == 16 && y < 10)
-                        {
-                            x = 5;
-                            y++;
-                            Console.WriteLine("170");
-                        }
-                        else if (x + roll == 16 && y == 10)
-                        {
-                            x = 5;
-                            Console.WriteLine("175");
-                        }
-                    }
 
                     else if (y == 10 && x < 10) //if row number is even or 0, player goes right and up
                     {
@@ -588,7 +272,7 @@ namespace Snakes_and_Ladders_Maths_Assignment
                         }
                     }
 
-                    else if (y == 1 | y == 3 | y == 5 | y == 7 | y == 9) //y is odd
+                    else if (y % 2 != 0) //y is odd
                     {
                         Console.WriteLine("181");
                         if (x - roll >= 0)
@@ -634,24 +318,9 @@ namespace Snakes_and_Ladders_Maths_Assignment
                             Console.WriteLine("221");
                         }
 
-
-
-
-
                     }
 
-                    //output for winning game
-                    else if (x == 10 && y == 10) //finished game
-                    {
-                        Console.WriteLine("Finsihed: Rolls {0}, snakes {1}, ladders {2}", r, s, l);
-                        i += 1;
-                        //reset
-                        y = 0;
-                        x = 0;
-                        Console.WriteLine("232");
-                        r = 0;
 
-                    }
                     //in neither odd or even just for the loop to execute anyway while i < 5
 
                 }
